@@ -120,6 +120,14 @@ section { padding: 56px 0; border-top: 1px solid var(--line); }
 .pubs .venue em { color: var(--ink); }
 .note { font-size: 14px; color: var(--muted); margin-top: 14px; }
 
+/* News */
+.news { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.story { display: grid; gap: 8px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 22px; text-decoration: none; color: var(--ink); }
+.story:hover .hl { color: var(--accent); }
+.story .src { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.story .hl { font-family: var(--display); font-size: 20px; font-weight: 600; line-height: 1.25; }
+.story .sum { font-size: 15px; color: var(--muted); }
+
 /* Experience */
 .rows { display: grid; gap: 0; }
 .row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -146,6 +154,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
       <li><a href="#research">Research</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -155,12 +164,12 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
 
   <header class="hero">
     <div>
-      <p class="eyebrow">Computational chemist · PhD candidate, University of Hawaiʻi at Mānoa</p>
+      <p class="eyebrow">Computational chemist · PhD candidate, Iowa State University</p>
       <h1>I predict how molecules react, and check the predictions against experiment.</h1>
-      <p class="lede">I use quantum chemistry and ab initio molecular dynamics to map reaction pathways, energetics and product distributions. My recent work traces how refrigerants break down into persistent fluorinated acids in the atmosphere.</p>
+      <p class="lede">I use quantum chemistry and ab initio molecular dynamics to map reaction pathways, energetics and product distributions. As lead author of a 2026 study, I showed that a widely used refrigerant does not form the persistent pollutant TFA through the atmospheric pathways proposed before.</p>
       <div class="actions">
-        <a class="btn primary" href="Allen_Vincent_CV.pdf">Download CV</a>
-        <a class="btn ghost" href="#research">See research</a>
+        <a class="btn primary" href="#research">See research</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/allenv412">Connect on LinkedIn</a>
       </div>
     </div>
 
@@ -192,7 +201,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
     <div class="sec-head"><h2>About</h2></div>
     <div class="about">
       <div>
-        <p>I am a PhD candidate in physical chemistry at the University of Hawaiʻi at Mānoa, working with Prof. Rui Sun. I build potential energy surfaces with electronic structure methods, then run ab initio dynamics on them to predict which products form, how fast and with what energy.</p>
+        <p>I am a PhD candidate in chemistry at Iowa State University in Prof. Rui Sun's group. I started my PhD at the University of Hawaiʻi at Mānoa and moved with the group to Iowa State in Fall 2026. I build potential energy surfaces with electronic structure methods, then run ab initio dynamics on them to predict which products form, how fast and with what energy.</p>
         <p>Most of my projects are joint work with experimental groups in the U.S. and Germany. Their crossed-beam and ion–molecule measurements test my simulations, and my simulations explain what their instruments see.</p>
         <p>Outside research, I founded and led the student leadership council of an NSF Engineering Research Center across six universities, and I have taught chemistry and mathematics for more than six years.</p>
       </div>
@@ -213,12 +222,13 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
     <div class="projects">
 
       <article class="project">
-        <div class="meta"><span class="tag">Atmospheric chemistry</span><span>PCCP, 2026</span><span>Pacifichem 2025 talk</span></div>
+        <div class="meta"><span class="tag">Atmospheric chemistry</span><span>PCCP, 2026</span><span>Lead author</span><span>Pacifichem 2025 talk</span></div>
         <div>
-          <h3>How a common refrigerant turns into a persistent acid</h3>
+          <h3>Does a common refrigerant really form TFA in the atmosphere?</h3>
           <dl>
-            <dt>Problem</dt><dd>HFC-134a, a widely used refrigerant, can degrade into trifluoroacetic acid (TFA), a persistent fluorinated pollutant. The formation pathways under atmospheric conditions were not fully understood.</dd>
-            <dt>Approach</dt><dd>Quantum chemistry mapping of the key reaction pathways and their energetics, combined with dynamics simulations.</dd>
+            <dt>Problem</dt><dd>Trifluoroacetic acid (TFA) is a persistent fluorinated pollutant. Earlier work proposed gas-phase pathways by which HFC-134a, a widely used refrigerant, could form it.</dd>
+            <dt>Approach</dt><dd>Mapped the energetics of the proposed pathways with quantum chemistry, then simulated them at tropospheric temperatures and pressures.</dd>
+            <dt>Result</dt><dd>The energy barriers on those routes are out of reach under atmospheric conditions, and the intermediates are stabilized instead. The proposed pathways do not produce TFA.</dd>
             <dt>Next</dt><dd>Extending the approach to HFO-1234yf, the newer low-GWP refrigerant, and its route to trifluoroacetaldehyde.</dd>
           </dl>
           <p class="link"><a href="https://doi.org/10.1039/d5cp03359d">Read the paper</a></p>
@@ -287,10 +297,26 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
     <p class="note">* Equal contribution.</p>
   </section>
 
+  <section id="news">
+    <div class="sec-head"><h2>In the news</h2></div>
+    <div class="news">
+      <a class="story" href="https://erc-earth.ku.edu/news/article/atmospheric-barriers-new-study-challenges-link-between-common-refrigerants-and-the-formation-of-tfa">
+        <span class="src">ERC EARTH News · Feb 20, 2026</span>
+        <span class="hl">Atmospheric Barriers: New Study Challenges Link Between Common Refrigerants and the Formation of TFA</span>
+        <span class="sum">Coverage of my lead-author study showing that proposed atmospheric pathways from HFC-134a to TFA are energetically blocked.</span>
+      </a>
+      <a class="story" href="https://www.hawaii.edu/news/2025/01/08/vincent-erc-earth-slc-president/">
+        <span class="src">University of Hawaiʻi News · Jan 8, 2025</span>
+        <span class="hl">PhD student leads student engagement in $26M refrigerant initiative</span>
+        <span class="sum">Profile of my work building and leading the student council of ERC EARTH, an NSF-funded refrigerant research center.</span>
+      </a>
+    </div>
+  </section>
+
   <section id="experience">
     <div class="sec-head"><h2>Experience</h2></div>
     <div class="rows">
-      <div class="row"><span class="when">2021 – present</span><div><h3>Graduate Research Assistant</h3><div class="org">University of Hawaiʻi at Mānoa</div><p>Quantum chemistry and ab initio dynamics of gas-phase reactions, in collaboration with experimental groups. Builds and optimizes simulation codes on HPC clusters.</p></div></div>
+      <div class="row"><span class="when">2021 – present</span><div><h3>Graduate Research Assistant</h3><div class="org">Iowa State University, Fall 2026 – present · University of Hawaiʻi at Mānoa, 2021 – Summer 2026</div><p>Quantum chemistry and ab initio dynamics of gas-phase reactions, in collaboration with experimental groups. Builds and optimizes simulation codes on HPC clusters.</p></div></div>
       <div class="row"><span class="when">2022 – 2025</span><div><h3>Founding President, Student Leadership Council</h3><div class="org">NSF Engineering Research Center EARTH</div><p>Set up the council from scratch and led 42 members across six universities, reporting monthly to the center's leadership team.</p></div></div>
       <div class="row"><span class="when">2021 – 2023</span><div><h3>Teaching Assistant</h3><div class="org">University of Hawaiʻi at Mānoa</div><p>General chemistry, organic chemistry and physical biochemistry. Outstanding Teaching Assistant Award, ACS Hawaii Section, 2023.</p></div></div>
       <div class="row"><span class="when">2016 – 2020</span><div><h3>Mathematics Teacher</h3><div class="org">Don Bosco High School &amp; Jr. College, India</div><p>Algebra, geometry and calculus for grades 8–12, using a flipped classroom.</p></div></div>
@@ -298,18 +324,17 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
   </section>
 
   <section id="contact">
-    <div class="sec-head"><h2>Contact</h2><p>I am open to industry roles in computational chemistry. The quickest way to reach me is by email.</p></div>
+    <div class="sec-head"><h2>Contact</h2><p>I am open to industry roles in computational chemistry. The quickest way to reach me is on LinkedIn.</p></div>
     <div class="contact">
-      <div><b>Email</b>ADD-EMAIL</div>
-      <div><b>LinkedIn</b><a href="#">ADD-LINKEDIN</a></div>
-      <div><b>Google Scholar</b><a href="#">ADD-SCHOLAR</a></div>
+      <div><b>LinkedIn</b><a href="https://www.linkedin.com/in/allenv412">linkedin.com/in/allenv412</a></div>
+      <div><b>ERC EARTH profile</b><a href="https://erc-earth.ku.edu/people/allen-vincent">erc-earth.ku.edu</a></div>
       <div><b>GitHub</b><a href="https://github.com/allenvincent808">github.com/allenvincent808</a></div>
     </div>
   </section>
 
 </main>
 
-<footer><div class="wrap">© 2026 Allen Vincent · Honolulu, Hawaiʻi</div></footer>
+<footer><div class="wrap">© 2026 Allen Vincent · Ames, Iowa</div></footer>
 
 </body>
 </html>
