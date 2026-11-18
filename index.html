@@ -137,6 +137,11 @@ section { padding: 56px 0; border-top: 1px solid var(--line); }
 .row p { margin: 0; max-width: 40em; }
 @media (max-width: 640px) { .row, .pubs li { grid-template-columns: 1fr; gap: 4px; } }
 
+/* Bio */
+.bio { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px 26px; display: grid; gap: 16px; justify-items: start; }
+.bio p { margin: 0; max-width: 46em; }
+.bio .btn { background: transparent; cursor: pointer; font-family: var(--body); }
+
 /* Contact */
 .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .contact div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; }
@@ -202,11 +207,13 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
     <div class="about">
       <div>
         <p>I am a PhD candidate in chemistry at Iowa State University in Prof. Rui Sun's group. I started my PhD at the University of Hawaiʻi at Mānoa and moved with the group to Iowa State in Fall 2026. I build potential energy surfaces with electronic structure methods, then run ab initio dynamics on them to predict which products form, how fast and with what energy.</p>
+        <p>My current work develops methods for exploring reaction networks, finding the pathways that matter in a system without having to guess them first. I am also studying condensed-phase reaction dynamics: how reactions proceed in water droplets, ice crystals and aerosol particles.</p>
         <p>Most of my projects are joint work with experimental groups in the U.S. and Germany. Their crossed-beam and ion–molecule measurements test my simulations, and my simulations explain what their instruments see.</p>
         <p>Outside research, I founded and led the student leadership council of an NSF Engineering Research Center across six universities, and I have taught chemistry and mathematics for more than six years.</p>
       </div>
       <ul class="facts">
         <li><b>Focus</b>Reaction mechanisms, kinetics and dynamics</li>
+        <li><b>Currently</b>Reaction network exploration methods; reactions in water droplets, ice and aerosol particles</li>
         <li><b>Applications</b>Atmospheric fate of refrigerants, organosilicon and ion–molecule chemistry</li>
         <li><b>Toolkit</b>NWChem, MOLPRO, ORCA, CP2K, PLUMED, VENUS, SHARC, Python, Fortran, SLURM</li>
         <li><b>Looking for</b>Industry roles in computational chemistry and molecular modeling</li>
@@ -273,7 +280,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
       </div>
       <div class="skill">
         <h3>Dynamics and kinetics</h3>
-        <div class="chips"><span class="chip">Ab initio MD</span><span class="chip">Metadynamics (PLUMED)</span><span class="chip">Branching ratios</span><span class="chip">Cross-sections</span><span class="chip">VENUS</span><span class="chip">SHARC</span><span class="chip">CP2K</span><span class="chip">AMBER</span></div>
+        <div class="chips"><span class="chip">Ab initio MD</span><span class="chip">Metadynamics (PLUMED)</span><span class="chip">Condensed-phase AIMD</span><span class="chip">Reaction network exploration</span><span class="chip">Branching ratios</span><span class="chip">Cross-sections</span><span class="chip">VENUS</span><span class="chip">SHARC</span><span class="chip">CP2K</span><span class="chip">AMBER</span></div>
       </div>
       <div class="skill">
         <h3>Computing</h3>
@@ -316,10 +323,19 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
   <section id="experience">
     <div class="sec-head"><h2>Experience</h2></div>
     <div class="rows">
-      <div class="row"><span class="when">2021 – present</span><div><h3>Graduate Research Assistant</h3><div class="org">Iowa State University, Fall 2026 – present · University of Hawaiʻi at Mānoa, 2021 – Summer 2026</div><p>Quantum chemistry and ab initio dynamics of gas-phase reactions, in collaboration with experimental groups. Builds and optimizes simulation codes on HPC clusters.</p></div></div>
+      <div class="row"><span class="when">Fall 2026 – present</span><div><h3>Graduate Research Assistant</h3><div class="org">Iowa State University</div><p>Develops methods for reaction network exploration. Studies condensed-phase reaction dynamics in water droplets, ice and aerosol particles.</p></div></div>
+      <div class="row"><span class="when">2021 – Summer 2026</span><div><h3>Graduate Research Assistant</h3><div class="org">University of Hawaiʻi at Mānoa</div><p>Quantum chemistry and ab initio dynamics of gas-phase reactions, in collaboration with experimental groups. Built and optimized simulation codes on HPC clusters.</p></div></div>
       <div class="row"><span class="when">2022 – 2025</span><div><h3>Founding President, Student Leadership Council</h3><div class="org">NSF Engineering Research Center EARTH</div><p>Set up the council from scratch and led 42 members across six universities, reporting monthly to the center's leadership team.</p></div></div>
       <div class="row"><span class="when">2021 – 2023</span><div><h3>Teaching Assistant</h3><div class="org">University of Hawaiʻi at Mānoa</div><p>General chemistry, organic chemistry and physical biochemistry. Outstanding Teaching Assistant Award, ACS Hawaii Section, 2023.</p></div></div>
       <div class="row"><span class="when">2016 – 2020</span><div><h3>Mathematics Teacher</h3><div class="org">Don Bosco High School &amp; Jr. College, India</div><p>Algebra, geometry and calculus for grades 8–12, using a flipped classroom.</p></div></div>
+    </div>
+  </section>
+
+  <section id="bio">
+    <div class="sec-head"><h2>Short bio</h2><p>For event organizers and newsletters. Free to use as is.</p></div>
+    <div class="bio">
+      <p id="bio-text">Allen Vincent is a PhD candidate in physical chemistry at Iowa State University, working with Prof. Rui Sun. He uses quantum chemistry and ab initio molecular dynamics to predict how reactions proceed, and tests the predictions against experiments by collaborators in the U.S. and Germany. His lead-author 2026 study showed that proposed atmospheric pathways from the refrigerant HFC-134a to the persistent pollutant trifluoroacetic acid are energetically blocked. He is now developing methods for exploring reaction networks and studying reactions in water droplets, ice and aerosol particles. He also founded the student leadership council of the NSF Engineering Research Center EARTH.</p>
+      <button type="button" id="copy-bio" class="btn ghost">Copy bio</button>
     </div>
   </section>
 
@@ -336,5 +352,15 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
 
 <footer><div class="wrap">© 2026 Allen Vincent · Ames, Iowa</div></footer>
 
+<script>
+document.getElementById('copy-bio').addEventListener('click', function () {
+  var btn = this, text = document.getElementById('bio-text').textContent;
+  function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy bio'; }, 2000); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { selectBio(); done('Selected, press Ctrl/Cmd+C'); });
+  } else { selectBio(); done('Selected, press Ctrl/Cmd+C'); }
+  function selectBio() { var r = document.createRange(); r.selectNodeContents(document.getElementById('bio-text')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+});
+</script>
 </body>
 </html>
